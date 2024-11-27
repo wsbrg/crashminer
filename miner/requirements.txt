@@ -1,0 +1,16 @@
+click
+tqdm
+easymp
+toolz
+filesystem-dict
+pandas
+cliffs-delta
+numpy
+scipy
+scikit-learn
+pyelftools
+setuptools
+tree-sitter==0.21.0
+torch
+transformers
+matplotlib

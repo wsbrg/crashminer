@@ -1,0 +1,8 @@
+# For each task, we can supply a filter of specific crashes to focus on.
+# For examples, with this filter every task, such as reproducing crashes,
+# is only conducted for the crashes with the IDs
+# 1278, 283, ...
+# from the project 'file'. The IDs are assigned by and scraped from the
+# OSS-Fuzz bugtracker. You may specify one project per line followed by
+# a list of comma seperated IDs.
+file,1278,283,10024,23205,9847
