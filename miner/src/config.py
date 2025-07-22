@@ -54,7 +54,7 @@ SOURCE_CPG_DOCKER = "source-cpg"
 #CPG_DICT = "./cpgdict.txt"
 
 # Treesitter parser library
-PARSER_LIB = f"{CWD}/utils/parsers/build/languages.so"
+PARSER_LIB = f"{CWD}/src/utils/parsers/build/languages.so"
 
 # We cannot use treesitter out-of-the-box since huge file cause problems so
 # that not all functions from a file are being extracted. As a solution we
