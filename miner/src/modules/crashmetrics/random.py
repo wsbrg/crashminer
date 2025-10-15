@@ -10,5 +10,5 @@ def random_metric(function_ids, database, seed):
             meta["metrics"] = {}
 
         random.seed(int(function_id, 16) + seed)
-        meta["metrics"]["random"] = random.randint(0, 1e9) / 1e9
+        meta["metrics"]["random"] = random.randint(0, int(1e9)) / 1e9
         function["meta"] = meta
