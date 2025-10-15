@@ -11,6 +11,7 @@ miner/assets
 miner/data/testcases
 miner/data/database
 miner/data/functions
+miner/data/functions.tar.gz
 miner/data/logs
 miner/data/results
 *.json
