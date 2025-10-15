@@ -2,7 +2,7 @@ click
 tqdm
 easymp
 toolz
-filesystem-dict
+filesystem-dict>=0.1.16
 pandas
 cliffs-delta
 numpy
