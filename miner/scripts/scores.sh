@@ -21,15 +21,20 @@ for scoring in $scorings_without_crash_db; do
     $scoring
 done
 
-for scoring in $scorings_with_crash_db; do
-  echo "[*] Calculate '$scoring' scores"
-  python src/cli.py crashmetrics \
-    -d $functions \
-    --nprocs $nprocs \
-    --progress \
-    $scoring \
-    --crash-database $database
-done
+if [ -d ${database} ]; then
+  for scoring in $scorings_with_crash_db; do
+    echo "[*] Calculate '$scoring' scores"
+    python src/cli.py crashmetrics \
+      -d $functions \
+      --nprocs $nprocs \
+      --progress \
+      $scoring \
+      --crash-database $database
+  done
+else
+  echo "[!] The metrics '${scorings_with_crash_db}' cannot be calculated as they require the full database from scraping."
+  echo "    This database does not exist at '${scorings_with_crash_db}'. This error is expected if you did not re-scrape."
+fi
 
 # Set missing scores
 python src/cli.py missingscores \
