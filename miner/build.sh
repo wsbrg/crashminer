@@ -1,5 +1,15 @@
 #!/bin/bash
 
+if ! python -V | grep "3.9.23" &>/dev/null; then
+  echo "[!] The code has only been tested with python version 3.9.23."
+  echo "    Some parts are known to break for recent python versions,"
+  echo "    such as 3.13.x. Therefore, please use 3.9.23 to make sure"
+  echo "    the experiments work as expected. You may want to use pyenv"
+  echo "    to setup a 3.9.23 python interpreter for this repository."
+  exit 1
+fi
+
+
 # Check if in venv
 python -c "import sys; sys.exit(1 if sys.prefix == sys.base_prefix else 0)"
 if [[ $? -ne 0 ]]; then
