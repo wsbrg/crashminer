@@ -21,7 +21,13 @@ echo "[*] Setup tree-sitter parsers"
 pushd src/utils/parsers
 find . -mindepth 1 -maxdepth 1 -type d -print0 | xargs -0 rm -rf
 git clone https://github.com/tree-sitter/tree-sitter-c
+pushd tree-sitter-c
+git checkout df6ac34d5eb1dccfac8f2a9011a8491300818d7c
+popd
 git clone https://github.com/tree-sitter/tree-sitter-cpp
+pushd tree-sitter-cpp
+git checkout 72fd00128f1c38319670cbf4bcedbba0dc849d96
+popd
 python build_parsers.py
 popd
 
