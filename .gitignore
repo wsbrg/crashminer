@@ -3,8 +3,8 @@ scraper/log
 scraper/env
 miner/env
 miner/py-tree-sitter
-miner/utils/parsers/tree-sitter-c
-miner/utils/parsers/tree-sitter-cpp
+miner/src/utils/parsers/tree-sitter-c
+miner/src/utils/parsers/tree-sitter-cpp
 miner/oss-fuzz
 miner/mcpp
 miner/assets
@@ -23,6 +23,7 @@ __pycache__/
 
 # C extensions
 *.so
+*.python-version
 
 # Distribution / packaging
 .Python
