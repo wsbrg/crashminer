@@ -10,7 +10,7 @@ scipy
 scikit-learn
 pyelftools
 setuptools
-tree-sitter==0.21.0
+tree-sitter==0.21.1
 torch
 transformers
 matplotlib
