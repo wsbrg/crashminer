@@ -1,0 +1,34 @@
+73,88c73,88
+< # Download and install the latest stable Go.
+< ADD https://storage.googleapis.com/golang/getgo/installer_linux $SRC/
+< RUN chmod +x $SRC/installer_linux && \
+<     SHELL="bash" $SRC/installer_linux -version 1.18beta2 && \
+<     rm $SRC/installer_linux
+< 
+< # Set up Golang environment variables (copied from /root/.bash_profile).
+< ENV GOPATH /root/go
+< 
+< # /root/.go/bin is for the standard Go binaries (i.e. go, gofmt, etc).
+< # $GOPATH/bin is for the binaries from the dependencies installed via "go get".
+< ENV PATH $PATH:/root/.go/bin:$GOPATH/bin
+< 
+< # Set up Golang coverage modules.
+< COPY gocoverage $GOPATH/gocoverage
+< RUN cd $GOPATH/gocoverage && go install ./...
+---
+> ## Download and install the latest stable Go.
+> #ADD https://storage.googleapis.com/golang/getgo/installer_linux $SRC/
+> #RUN chmod +x $SRC/installer_linux && \
+> #    SHELL="bash" $SRC/installer_linux -version 1.18beta2 && \
+> #    rm $SRC/installer_linux
+> #
+> ## Set up Golang environment variables (copied from /root/.bash_profile).
+> #ENV GOPATH /root/go
+> #
+> ## /root/.go/bin is for the standard Go binaries (i.e. go, gofmt, etc).
+> ## $GOPATH/bin is for the binaries from the dependencies installed via "go get".
+> #ENV PATH $PATH:/root/.go/bin:$GOPATH/bin
+> #
+> ## Set up Golang coverage modules.
+> #COPY gocoverage $GOPATH/gocoverage
+> #RUN cd $GOPATH/gocoverage && go install ./...

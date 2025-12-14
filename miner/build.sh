@@ -45,6 +45,7 @@ echo "[*] Setup oss-fuzz"
 git clone https://github.com/MNayer/oss-fuzz.git
 pushd oss-fuzz
 git checkout 59d11e8ad04c23aa741ad8395587942be2710852
+patch infra/base-images/base-runner/Dockerfile ../Dockerfile.diff
 docker build --pull -t gcr.io/oss-fuzz-base/base-image "$@" infra/base-images/base-image
 docker build -t gcr.io/oss-fuzz-base/base-clang "$@" infra/base-images/base-clang
 docker build -t gcr.io/oss-fuzz-base/base-builder "$@" infra/base-images/base-builder
